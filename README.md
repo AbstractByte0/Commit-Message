@@ -12,3 +12,5 @@ type the highlighted part of the path into the program when it asks for the repo
 -----Font file----- <br>
 the 1's and 0's are how many commits are made <br>
 default font file only uses 1 commit <br>
+<br>
+use the program at the begining of the week so the words are wrote correctly

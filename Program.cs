@@ -12,7 +12,6 @@ namespace github_commit_message {
         public static string path;
         public static string username;
         public static string email;
-        public static string pass;
         public static string lastD = "null";
         public static string input;
         public static int times;
@@ -26,18 +25,14 @@ namespace github_commit_message {
                 Console.WriteLine("type the path to whare it should clone the repo to (put a \\ or / at the end of the path)");
                 Console.WriteLine(": ");
                 cloneDIR = Console.ReadLine();
-
-                File.Create("cloneDIR");
+                
                 File.WriteAllText("cloneDIR",cloneDIR);
-                File.Create("PATH");
                 File.WriteAllText("PATH", path);
-            } else { path = File.ReadLines("PATH").ToString(); cloneDIR = File.ReadLines("cloneDIR").ToString(); }
+            } else { path = File.ReadAllLines("PATH")[0]; cloneDIR = File.ReadAllLines("cloneDIR")[0]; }
             Console.WriteLine("type your GH email: ");
             email = Console.ReadLine();
             Console.WriteLine("type your GH username: ");
             username = Console.ReadLine();
-            Console.WriteLine("type your GH password: ");
-            pass = Console.ReadLine();
             Console.WriteLine("type the repo git file, example: Commit-Message.git");
             Console.WriteLine(": ");
             repo = Console.ReadLine();
@@ -92,6 +87,7 @@ namespace github_commit_message {
         }
         public static void commitGH(string commit_times) {
             if (commit_times == "setup") {
+
                 Process process = new Process();
                 ProcessStartInfo startInfo = new ProcessStartInfo();
                 startInfo.WindowStyle = ProcessWindowStyle.Hidden;
@@ -112,37 +108,46 @@ namespace github_commit_message {
                 ProcessStartInfo startInfo3 = new ProcessStartInfo();
                 startInfo3.WindowStyle = ProcessWindowStyle.Hidden;
                 startInfo3.FileName = path;
-                startInfo3.Arguments = "git clone https://github.com/"+username+"/"+repo+" "+cloneDIR;
+                startInfo3.Arguments = "clone https://github.com/"+username+"/"+repo+" "+cloneDIR;
                 process3.StartInfo = startInfo3;
                 process3.Start();
                 process3.WaitForExit();
-            } if (Int32.Parse(commit_times) >= 1) {
-                int looptimes = 0;
-                while (looptimes != Int32.Parse(commit_times)) {
-                    looptimes += 1;
-                    var rand = new Random();
-                    File.WriteAllText(cloneDIR+"README.md",rand.Next().ToString());
-                    Process process4 = new Process();
-                    ProcessStartInfo startInfo4 = new ProcessStartInfo();
-                    startInfo4.WindowStyle = ProcessWindowStyle.Hidden;
-                    startInfo4.FileName = path;
-                    startInfo4.Arguments = "git add README.md";
-                    process4.StartInfo = startInfo4;
-                    process4.Start();
-                    process4.WaitForExit();
-                    Process process5 = new Process();
-                    ProcessStartInfo startInfo5 = new ProcessStartInfo();
-                    startInfo5.WindowStyle = ProcessWindowStyle.Hidden;
-                    startInfo5.FileName = path;
-                    startInfo5.Arguments = "git commit -m \"random\"";
-                    process5.StartInfo = startInfo5;
-                    process5.Start();
-                    process5.WaitForExit();
-                    //git commit -m "random"
+            } else {
+                if (Int32.Parse(commit_times) >= 1) {
+                    int looptimes = 0;
+                    while (looptimes != Int32.Parse(commit_times)) {
+                        looptimes += 1;
+                        var rand = new Random();
+                        File.WriteAllText(cloneDIR+"README.md",rand.Next().ToString());
+                        Process process4 = new Process();
+                        ProcessStartInfo startInfo4 = new ProcessStartInfo();
+                        startInfo4.WindowStyle = ProcessWindowStyle.Hidden;
+                        startInfo4.FileName = path;
+                        startInfo4.Arguments = "add README.md";
+                        process4.StartInfo = startInfo4;
+                        process4.Start();
+                        process4.WaitForExit();
+                        Process process5 = new Process();
+                        ProcessStartInfo startInfo5 = new ProcessStartInfo();
+                        startInfo5.WindowStyle = ProcessWindowStyle.Hidden;
+                        startInfo5.FileName = path;
+                        startInfo5.Arguments = "commit -m \"random\"";
+                        process5.StartInfo = startInfo5;
+                        process5.Start();
+                        process5.WaitForExit();
+                        Process process6 = new Process();
+                        ProcessStartInfo startInfo6 = new ProcessStartInfo();
+                        startInfo6.WindowStyle = ProcessWindowStyle.Hidden;
+                        startInfo6.FileName = path;
+                        startInfo6.Arguments = "push";
+                        process6.StartInfo = startInfo6;
+                        process6.Start();
+                        process6.WaitForExit();
+                    }
+                    Console.WriteLine("Committed once");
+                } if (commit_times == "2") {
+                    Console.WriteLine("Committed twice");
                 }
-                Console.WriteLine("Committed once");
-            } if (commit_times == "2") {
-                Console.WriteLine("Committed twice");
             }
         }
     }

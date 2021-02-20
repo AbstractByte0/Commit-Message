@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "github-commit-message/1.0.0": {
+        "runtime": {
+          "github-commit-message.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "github-commit-message/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

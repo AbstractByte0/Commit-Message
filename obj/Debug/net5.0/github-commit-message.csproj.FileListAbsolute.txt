@@ -1,0 +1,16 @@
+C:\Users\gavin\RiderProjects\github-commit-message\github-commit-message\bin\Debug\net5.0\github-commit-message.exe
+C:\Users\gavin\RiderProjects\github-commit-message\github-commit-message\bin\Debug\net5.0\github-commit-message.deps.json
+C:\Users\gavin\RiderProjects\github-commit-message\github-commit-message\bin\Debug\net5.0\github-commit-message.runtimeconfig.json
+C:\Users\gavin\RiderProjects\github-commit-message\github-commit-message\bin\Debug\net5.0\github-commit-message.runtimeconfig.dev.json
+C:\Users\gavin\RiderProjects\github-commit-message\github-commit-message\bin\Debug\net5.0\github-commit-message.dll
+C:\Users\gavin\RiderProjects\github-commit-message\github-commit-message\bin\Debug\net5.0\ref\github-commit-message.dll
+C:\Users\gavin\RiderProjects\github-commit-message\github-commit-message\bin\Debug\net5.0\github-commit-message.pdb
+C:\Users\gavin\RiderProjects\github-commit-message\github-commit-message\obj\Debug\net5.0\github-commit-message.csprojAssemblyReference.cache
+C:\Users\gavin\RiderProjects\github-commit-message\github-commit-message\obj\Debug\net5.0\github-commit-message.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gavin\RiderProjects\github-commit-message\github-commit-message\obj\Debug\net5.0\github-commit-message.AssemblyInfoInputs.cache
+C:\Users\gavin\RiderProjects\github-commit-message\github-commit-message\obj\Debug\net5.0\github-commit-message.AssemblyInfo.cs
+C:\Users\gavin\RiderProjects\github-commit-message\github-commit-message\obj\Debug\net5.0\github-commit-message.csproj.CoreCompileInputs.cache
+C:\Users\gavin\RiderProjects\github-commit-message\github-commit-message\obj\Debug\net5.0\github-commit-message.dll
+C:\Users\gavin\RiderProjects\github-commit-message\github-commit-message\obj\Debug\net5.0\ref\github-commit-message.dll
+C:\Users\gavin\RiderProjects\github-commit-message\github-commit-message\obj\Debug\net5.0\github-commit-message.pdb
+C:\Users\gavin\RiderProjects\github-commit-message\github-commit-message\obj\Debug\net5.0\github-commit-message.genruntimeconfig.cache

@@ -13,4 +13,4 @@ type the highlighted part of the path into the program when it asks for the repo
 the 1's and 0's are how many commits are made <br>
 default font file only uses 1 commit <br>
 <br>
-use the program at the begining of the week so the words are wrote correctly
+use the program at the end of the week so the words look correctly, like on saterday becuse the program waits a day before commiting

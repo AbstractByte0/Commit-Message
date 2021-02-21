@@ -69,7 +69,7 @@ namespace github_commit_message {
                                             if (lastD != DateTime.Now.ToString("dd")) {
                                                 loop = false;
                                             } else {
-                                                Thread.Sleep(3600000); 
+                                                Thread.Sleep(3600000);
                                             }
                                         }
                                         //reset variables so it will work on next char
@@ -87,7 +87,6 @@ namespace github_commit_message {
         }
         public static void commitGH(string commit_times) {
             if (commit_times == "setup") {
-
                 Process process = new Process();
                 ProcessStartInfo startInfo = new ProcessStartInfo();
                 startInfo.WindowStyle = ProcessWindowStyle.Hidden;
@@ -119,19 +118,11 @@ namespace github_commit_message {
                         looptimes += 1;
                         var rand = new Random();
                         File.WriteAllText(cloneDIR+"README.md",rand.Next().ToString());
-                        Process process4 = new Process();
-                        ProcessStartInfo startInfo4 = new ProcessStartInfo();
-                        startInfo4.WindowStyle = ProcessWindowStyle.Hidden;
-                        startInfo4.FileName = path;
-                        startInfo4.Arguments = "add README.md";
-                        process4.StartInfo = startInfo4;
-                        process4.Start();
-                        process4.WaitForExit();
                         Process process5 = new Process();
                         ProcessStartInfo startInfo5 = new ProcessStartInfo();
                         startInfo5.WindowStyle = ProcessWindowStyle.Hidden;
                         startInfo5.FileName = path;
-                        startInfo5.Arguments = "commit -m \"random\"";
+                        startInfo5.Arguments = "-C "+cloneDIR+" add README.md";
                         process5.StartInfo = startInfo5;
                         process5.Start();
                         process5.WaitForExit();
@@ -139,14 +130,28 @@ namespace github_commit_message {
                         ProcessStartInfo startInfo6 = new ProcessStartInfo();
                         startInfo6.WindowStyle = ProcessWindowStyle.Hidden;
                         startInfo6.FileName = path;
-                        startInfo6.Arguments = "push";
+                        startInfo6.Arguments = "-C "+cloneDIR+" commit -m \"random\"";
                         process6.StartInfo = startInfo6;
                         process6.Start();
                         process6.WaitForExit();
+                        Process process7 = new Process();
+                        ProcessStartInfo startInfo7 = new ProcessStartInfo();
+                        startInfo7.WindowStyle = ProcessWindowStyle.Hidden;
+                        startInfo7.FileName = path;
+                        startInfo7.Arguments = "-C "+cloneDIR+" init";
+                        process7.StartInfo = startInfo7;
+                        process7.Start();
+                        process7.WaitForExit();
+                        Process process8 = new Process();
+                        ProcessStartInfo startInfo8 = new ProcessStartInfo();
+                        startInfo8.WindowStyle = ProcessWindowStyle.Hidden;
+                        startInfo8.FileName = path;
+                        startInfo8.Arguments = "-C "+cloneDIR+" push";
+                        process8.StartInfo = startInfo8;
+                        process8.Start();
+                        process8.WaitForExit();
                     }
                     Console.WriteLine("Committed once");
-                } if (commit_times == "2") {
-                    Console.WriteLine("Committed twice");
                 }
             }
         }

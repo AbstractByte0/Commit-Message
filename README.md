@@ -4,9 +4,6 @@ use the program at the end of the week so the words look correctly, like on sate
 make a repo with a file called "README.md" then make it private and then goto your profile page (github.com/username) and click Contribution settings on the top right and allow private contributions
 
 download git form https://git-scm.com/download/ <br>
-make sure git is in your PATH<br>
-windows example: <br>
-<img src="https://media.discordapp.net/attachments/542526737075011629/812539947290460191/unknown.png" alt="PATH" width="469.5" height="136.5"> 
 <br>
 <br>
 type the highlighted part of the path into the program when it asks for the repo git file <br>

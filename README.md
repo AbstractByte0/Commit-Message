@@ -1,7 +1,7 @@
 # Commit Message
 -----How to use----- <br>
 use the program at the end of the week so the words look correctly, like on saterday becuse the program waits a day before commiting. <br>
-make a repo with a file called "README.md" then make it private and then goto your profile page (github.com/<username>) and click Contribution settings on the top right and allow private contributions
+make a repo with a file called "README.md" then make it private and then goto your profile page (github.com/username) and click Contribution settings on the top right and allow private contributions
 
 download git form https://git-scm.com/download/ <br>
 make sure git is in your PATH<br>

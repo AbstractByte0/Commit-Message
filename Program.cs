@@ -68,9 +68,7 @@ namespace github_commit_message {
                                             //wait a day
                                             if (lastD != DateTime.Now.ToString("dd")) {
                                                 loop = false;
-                                            } else {
-                                                Thread.Sleep(3600000);
-                                            }
+                                            } else { Thread.Sleep(3600000); }
                                         }
                                         //reset variables so it will work on next char
                                         commit = true;
@@ -103,21 +101,23 @@ namespace github_commit_message {
                 process2.StartInfo = startInfo2;
                 process2.Start();
                 process2.WaitForExit();
-                Process process3 = new Process();
-                ProcessStartInfo startInfo3 = new ProcessStartInfo();
-                startInfo3.WindowStyle = ProcessWindowStyle.Hidden;
-                startInfo3.FileName = path;
-                startInfo3.Arguments = "clone https://github.com/"+username+"/"+repo+" "+cloneDIR;
-                process3.StartInfo = startInfo3;
-                process3.Start();
-                process3.WaitForExit();
             } else {
                 if (Int32.Parse(commit_times) >= 1) {
                     int looptimes = 0;
                     while (looptimes != Int32.Parse(commit_times)) {
-                        looptimes += 1;
+                        Process process3 = new Process();
+                        ProcessStartInfo startInfo3 = new ProcessStartInfo();
+                        startInfo3.WindowStyle = ProcessWindowStyle.Hidden;
+                        startInfo3.FileName = path;
+                        startInfo3.Arguments = "clone https://github.com/"+username+"/"+repo+" "+cloneDIR;
+                        process3.StartInfo = startInfo3;
+                        process3.Start();
+                        process3.WaitForExit();
+                        //write to readme.md
                         var rand = new Random();
                         File.WriteAllText(cloneDIR+"README.md",rand.Next().ToString());
+                        looptimes += 1;
+                        //
                         Process process5 = new Process();
                         ProcessStartInfo startInfo5 = new ProcessStartInfo();
                         startInfo5.WindowStyle = ProcessWindowStyle.Hidden;
@@ -146,12 +146,11 @@ namespace github_commit_message {
                         ProcessStartInfo startInfo8 = new ProcessStartInfo();
                         startInfo8.WindowStyle = ProcessWindowStyle.Hidden;
                         startInfo8.FileName = path;
-                        startInfo8.Arguments = "-C "+cloneDIR+" push";
+                        startInfo8.Arguments = "-C "+cloneDIR+" push origin master";
                         process8.StartInfo = startInfo8;
                         process8.Start();
                         process8.WaitForExit();
-                    }
-                    Console.WriteLine("Committed once");
+                    } Console.WriteLine("Committed");
                 }
             }
         }

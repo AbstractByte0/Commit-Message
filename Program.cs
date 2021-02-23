@@ -17,6 +17,8 @@ namespace github_commit_message {
         public static int times;
         static void Main(string[] args) {
             if (!File.Exists("PATH")) {
+                Console.WriteLine("--One time setup--");
+                Console.WriteLine("");
                 Console.WriteLine("type the path to git, windows example : C:\\Program Files\\Git\\bin\\git.exe");
                 Console.WriteLine("you will need to download git from https://git-scm.com/downloads");
                 Console.WriteLine(": ");
@@ -28,6 +30,9 @@ namespace github_commit_message {
                 
                 File.WriteAllText("cloneDIR",cloneDIR);
                 File.WriteAllText("PATH", path);
+                
+                Console.WriteLine("");
+                Console.WriteLine("--One time setup done--");
             } else { path = File.ReadAllLines("PATH")[0]; cloneDIR = File.ReadAllLines("cloneDIR")[0]; }
             Console.WriteLine("type your GH email: ");
             email = Console.ReadLine();
@@ -39,7 +44,7 @@ namespace github_commit_message {
             commitGH("setup");
             Console.WriteLine("spell out messages on your contributions page by editing the readme.md file on a repo you select");
             Console.WriteLine("type what you want it to say (only accepts letters) : ");
-            input = Console.ReadLine();
+            input = Console.ReadLine().ToLower();
             input = Regex.Replace(input," ", "/");
             Console.Clear();
             Console.WriteLine(input);

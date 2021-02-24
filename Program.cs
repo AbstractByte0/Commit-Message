@@ -122,7 +122,7 @@ namespace github_commit_message {
                         var rand = new Random();
                         File.WriteAllText(cloneDIR+"README.md",rand.Next().ToString());
                         looptimes += 1;
-                        //
+                        // 
                         Process process5 = new Process();
                         ProcessStartInfo startInfo5 = new ProcessStartInfo();
                         startInfo5.WindowStyle = ProcessWindowStyle.Hidden;
@@ -151,7 +151,7 @@ namespace github_commit_message {
                         ProcessStartInfo startInfo8 = new ProcessStartInfo();
                         startInfo8.WindowStyle = ProcessWindowStyle.Hidden;
                         startInfo8.FileName = path;
-                        startInfo8.Arguments = "-C "+cloneDIR+" push origin master";
+                        startInfo8.Arguments = "-C "+cloneDIR+" push origin main";
                         process8.StartInfo = startInfo8;
                         process8.Start();
                         process8.WaitForExit();
